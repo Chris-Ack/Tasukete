@@ -2,6 +2,7 @@
   "name": "tasukete",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:9000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
@@ -36,7 +37,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "hack:server": "node -r dotenv/config ./server/runserver.js"
   },
   "eslintConfig": {
     "extends": [
@@ -56,4 +58,5 @@
       "last 1 safari version"
     ]
   }
+
 }
