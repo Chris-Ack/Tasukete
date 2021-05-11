@@ -39,7 +39,8 @@ app.post("/api/tasukete/delete", async (req, res) => {
   return res.sendStatus(204);
 });
 
-/////////////////////////STRIPE ENDPOINT///////////////////////////
+/////////////////////////STRIPE CUSTOM PAYMENT ENDPOINT///////////////////////////
+
 app.post("/api/create-payment-intent", async (req, res) => {
   const { items } = req.body;
   // Create a PaymentIntent with the order amount and currency
@@ -51,7 +52,48 @@ app.post("/api/create-payment-intent", async (req, res) => {
     clientSecret: paymentIntent.client_secret
   });
 });
-///////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////////
+/////////////////////////STRIPE CHECKOUT ENDPOINT//////////////////////////////////////////
+
+const YOUR_DOMAIN = 'http://localhost:9000';
+
+
+app.post('/create-checkout-session', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    payment_method_types: ['card'],
+    line_items: [
+      {
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: 'Stubborn Attachments',
+            images: ['https://i.imgur.com/EHyR2nP.png'],
+          },
+          unit_amount: 2000,
+        },
+        quantity: 1,
+      },
+    ],
+    mode: 'payment',
+    success_url: `${YOUR_DOMAIN}/success.html`,
+    cancel_url: `${YOUR_DOMAIN}/cancel.html`,
+  });
+  res.json({ id: session.id });
+});
+
+///////////////////////////////////////////////////////////////////////////
+
+/////////////////////////STRIP GET ID ENDPOINT//////////////////////////////////////////////////
+/*
+app.get('/api/payment_intents/:id', async (req, res) => {
+  const paymentIntent = await stripe.paymentIntents.retrieve('ch_1IpspDAvO61I5XZRuaEYAUx7')
+  console.log(paymentIntent)
+  res.send(paymentIntent)
+
+});
+*/
+///////////////////////////////////////////////////////////////////////////
 
 
 app.get("*", (req, res) => {
