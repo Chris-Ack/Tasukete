@@ -34,11 +34,11 @@
     "workbox-streams": "^5.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node -r dotenv/config ./server/runserver.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "hack:server": "node -r dotenv/config ./server/runserver.js"
+    "hack:client": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [
@@ -57,6 +57,7 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://tasukete-app.herokuapp.com/"
 
 }
