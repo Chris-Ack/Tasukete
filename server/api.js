@@ -2,7 +2,7 @@ const express = require("express");
 const db = require("../knexfile");
 const path = require("path");
 const cors = require("cors");
-const stripe = require("stripe")("pk_test_51IpqSaAvO61I5XZRj77hWRG7epQ8fnU632M5wF2tr305UFYMpjqFwiIxmnjOdPD1cyicOWb99iYdEUzyvE5g8Con00cg4nIZOX")
+const stripe = require("stripe")("sk_test_51IpqSaAvO61I5XZRc9SwDd4Bj20QitY6tfQ0vjg5zriGKbE1yyGeGPbX9GDQykzsBmrF80d7fKButqqSOUiheamC00YCZuel90")
 
 const app = express();
 
@@ -59,13 +59,13 @@ app.post("/api/create-payment-intent", async (req, res) => {
 const YOUR_DOMAIN = 'http://localhost:9000';
 
 
-app.post('/create-checkout-session', async (req, res) => {
+app.post('/api/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
     payment_method_types: ['card'],
     line_items: [
       {
         price_data: {
-          currency: 'usd',
+          currency: 'jpy',
           product_data: {
             name: 'Stubborn Attachments',
             images: ['https://i.imgur.com/EHyR2nP.png'],
