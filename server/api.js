@@ -42,7 +42,7 @@ app.post('/api/create-checkout-session', async (req, res) => {
 
 app.get("/api/tasukete/", async (_, res) => {
   try {
-    const data = await db.select().table("test");
+    const data = await db.select("*").table("test");
     res.status(200);
     res.send(data);
   } catch (err) {
