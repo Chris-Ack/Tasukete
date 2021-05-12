@@ -8,7 +8,7 @@ export default function HelperPanel() {
     //TODO fetch information from database: image, name, location, id, dob, description, {services: price}
 
     const [information, setInformation] = useState([])
-    const [orderInfo, setOrderInfo] = useState([])
+    // const [orderInfo, setOrderInfo] = useState([])
 
     const getHelper = async() => {
         //TODO check the route
@@ -16,34 +16,40 @@ export default function HelperPanel() {
         setInformation(res.data);
     }
 
-    const getOrderInfo = async() => {
-        //TODO check the route for service database
-        const res = await axios.get('/api/orderinfo/:orderid');
-        setOrderInfo(res.data);
-    }
+    // const getOrderInfo = async() => {
+    //     //TODO check the route for service database
+    //     const res = await axios.get('/api/orderinfo/:orderid');
+    //     setOrderInfo(res.data);
+    // }
+
+    // function orderInfo() {
+    //     return (
+    //         <div>
+    //             <h1></h1>
+    //         </div>
+    //     )
+    // }
 
     useEffect(() => {
         getHelper();
-        getOrderInfo();
+        // getOrderInfo();
     }, []);
 
 
     return (
         <>
             <div className="helper-panel">
-                <img src="./asset/tasuketebanner.jpg" id="banner-photo" alt="banner-photo"/>
-                <img src="./asset/owl.jpeg" id="helper-photo" alt="helper-photo"/>
+                <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
                 <div className="helper-information">
-                    <h1>{information.name} is ready to help you! 🎃</h1>
-                    <h2>description</h2>
-                    {information.description}
-                    <h2>Service</h2>
-                    <ul>
-                        {/* TODO check what info database holds */}
-                        <li>{orderInfo}</li>
-                    </ul>
+                    {/* TODO check what info database holds */}
+                    <h3>{information.name} is ready to help...</h3>
+                    <img src={information.picture} id="helper-picture" alt="helper-picture"/>
                 </div>
-                <CheckoutButton />
+                <div id="button-container">
+                <button>Next</button>
+                <CheckoutButton /> 
+                </div>
+
 
             </div>
         </>

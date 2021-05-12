@@ -28,13 +28,48 @@
   color: #61dafb;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #334F65;
+}
+
+.helper-panel {
+  display: inline-block;
+  justify-content: center;
+}
+
+.helper-information {
+  display: inline-block;
+  justify-content: center;
+  background-color: #E5DFD2;
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px #988890;
+}
+
+button {
+  background-color: #E5DFD2;
+  color: #334F65;
+  margin: 5px;
+  border-radius: 8px;
+  border-color: #916257;
+}
+
+#button-container {
+  display: inline-block, wrap;
+  justify-content: center;
+}
+
 #helper-photo {
   width: 300px;
+  border-radius: 10px;
+  border-color: #916257;
 }
 
 #banner-photo {
   width: 100%;
-  height: 500px;
+  height:auto;
 }
 @keyframes App-logo-spin {
   from {
@@ -44,3 +79,16 @@
     transform: rotate(360deg);
   }
 }
+
+@media only screen and (min-width: 650%) {
+  div {
+    display: flex;
+    justify-content: center;
+  }
+}
+/* 
+#E5DFD2 white
+#84756D brown
+#988890 lavender
+#916257 burnt orange
+#334F65 blue */

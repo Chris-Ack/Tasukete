@@ -25,7 +25,6 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>HELLO THIS IS definitely not GAETAN</h1>
         <div className="container">
           {test}
         </div>
