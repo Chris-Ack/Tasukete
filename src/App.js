@@ -30,9 +30,10 @@ function App() {
 
   return (
     <div className="App">
+    <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
       <Router>
          
-      <Route path={["/login", "/"]}>
+      <Route exact path={["/login", "/"]}>
         <LoginPanel
           users = {users}
           currentUser = {currentUser}
