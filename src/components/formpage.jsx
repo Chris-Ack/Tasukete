@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import wards from './data/tokyowards.json'
 
 
 const services = [{ name: 'Administration', price: 2500 }, { name: 'Banking', price: 2500 },
 { name: 'Phone', price: 1500 }, { name: 'Postal', price: 800 }, { name: 'apartments', price: 2000 },
 { name: 'Immigration', price: 2000 }]
+
 
 export default function FormPage() {
 
@@ -32,17 +34,15 @@ export default function FormPage() {
                     <div id="location-container">
                         <label for="location-list">Where: </label>
                         <select name="location list" id="location-list">
-                            {/* {locations.map((location) => {
-                                
-                            })} */}
+                            {wards.map((ward) => {
+                                return <option value={ward.name.toLowerCase()}>{ward.name}</option>
+                            })}
                         </select>
-
                     </div>
                     <div id="description-container">
                         <label htmlFor="">
                             <textarea name="problem description" id="problem-description" cols="30" rows="5"></textarea>
                         </label>
-
                     </div>
                 </form>
             </div>
