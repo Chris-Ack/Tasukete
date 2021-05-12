@@ -22,8 +22,8 @@ app.post('/api/create-checkout-session', async (req, res) => {
         price_data: {
           currency: 'jpy',
           product_data: {
-            name: 'Stubborn Attachments',
-            images: ['https://i.imgur.com/EHyR2nP.png'],
+            name: 'Your helper fee',
+            images: ['./asset/tasuketebanner.jpg'],
           },
           unit_amount: 2000,
         },
@@ -43,6 +43,26 @@ app.post('/api/create-checkout-session', async (req, res) => {
 app.get("/api/tasukete/", async (_, res) => {
   try {
     const data = await db.select("*").table("test");
+    res.status(200);
+    res.send(data);
+  } catch (err) {
+    console.log("Error", err);
+  }
+});
+
+app.get("/api/tasukete/users", async (_, res) => {
+  try {
+    const data = await db.select("*").table("users");
+    res.status(200);
+    res.send(data);
+  } catch (err) {
+    console.log("Error", err);
+  }
+});
+
+app.get("/api/tasukete/helpers", async (_, res) => {
+  try {
+    const data = await db.select("*").table("helpers");
     res.status(200);
     res.send(data);
   } catch (err) {
