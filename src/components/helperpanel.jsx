@@ -30,7 +30,7 @@ export default function HelperPanel() {
         <>
             <div className="helper-panel">
 
-                <img src="../src/asset/owl.jpeg" alt="helper-photo"/>
+                <img src="./asset/owl.jpeg" id="helper-photo" alt="helper-photo"/>
                 <div className="helper-information">
                     <h1>{information.name} is ready to help you! 🎃</h1>
                     <h2>description</h2>
