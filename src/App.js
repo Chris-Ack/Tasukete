@@ -3,6 +3,7 @@ import "./styles/App.css";
 import axios from "axios";
 import HelperPanel from './components/helperpanel';
 import Formpage from "./components/formpage";
+import ThankYou from "./components/thankyoupage";
 
 function App() {
   const [test, setTest] = useState([]);
@@ -25,14 +26,14 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>HELLO THIS IS definitely not GAETAN</h1>
+       
         <div className="container">
-          {test}
+       
         </div>
-        <HelperPanel />
-
+        {/* <HelperPanel /> */}
+        <ThankYou />
         {/* {component inserted only for testing purposes, to remove} */}
-        <Formpage />
+        {/* <Formpage /> */}
       </div>
     </>
   );
