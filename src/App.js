@@ -5,6 +5,7 @@ import axios from "axios";
 import HelperPanel from './components/helperpanel';
 import Formpage from "./components/formpage";
 import LoginPanel from "./components/LoginPanel.jsx"
+import ThankYou from "./components/thankyoupage"
 
 
 function App() {
@@ -23,7 +24,6 @@ function App() {
     }
   }
 
-
   useEffect(() => {
     userCall();
   }, []);
@@ -32,7 +32,7 @@ function App() {
     <div className="App">
       <Router>
          
-      <Route path="/login">
+      <Route path={["/login", "/"]}>
         <LoginPanel
           users = {users}
           currentUser = {currentUser}
@@ -47,10 +47,12 @@ function App() {
         <Formpage
           />
       </Route>
-       <Route path="/HelperPanel">
+       <Route path="/helperpanel">
          <HelperPanel />
        </Route>
-
+       <Route path="/thankyou">
+         <ThankYou />
+       </Route>
       
       </Router>
     </div>

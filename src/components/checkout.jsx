@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { loadStripe } from "@stripe/stripe-js";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 
 const stripePromise = loadStripe("pk_test_51IpqSaAvO61I5XZRj77hWRG7epQ8fnU632M5wF2tr305UFYMpjqFwiIxmnjOdPD1cyicOWb99iYdEUzyvE5g8Con00cg4nIZOX");
 
@@ -37,6 +38,7 @@ export default function Checkout() {
     return message ? (
         <section>
             <p>{message}</p>
+            <Redirect to="/ThankYou" />
         </section>
     ) : (
         <section>
