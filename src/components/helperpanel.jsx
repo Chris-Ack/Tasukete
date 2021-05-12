@@ -51,8 +51,6 @@ export default function HelperPanel() {
                 <button>Next</button>
                 <CheckoutButton /> 
                 </div>
-
-
             </div>
         </>
     )
