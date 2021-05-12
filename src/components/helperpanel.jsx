@@ -45,11 +45,11 @@ export default function HelperPanel() {
                 } ) */}
                 <div className="helper-information">
                     {/* TODO check what info database holds */}
-                    <h3>{helper.first_name} is ready to help...</h3>
-                    <img src={helper.first_name} id="helper-picture" alt="helper-picture"/>
+                    <h3>{helpers.first_name} is ready to help...</h3>
+                    <img src={helpers.first_name} id="helper-picture" alt="helper-picture"/>
                 </div>
                 <div>
-                <h3>{helper.first_name} can help you with...</h3>
+                <h3>{helpers.first_name} can help you with...</h3>
                 <p>insert order info here</p>
                 </div>
                 <div id="button-container">

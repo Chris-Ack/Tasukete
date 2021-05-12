@@ -44,10 +44,10 @@ function App() {
           />
       </Route>
       <Route path="/formpage">
-        <Formpage
-          />
-      </Route>
-       <Route path="/HelperPanel">
+        <Formpage/Helpe
+
+        {/* {component inserted only for testing purposes, to remove} */}
+        <Formpage />rPanel">
          <HelperPanel />
        </Route>
 
