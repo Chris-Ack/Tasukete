@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState, useEffect } from 'react';
 import CheckoutButton from './checkout'
 
+
+
 export default function HelperPanel() {
     //TODO fetch information from database: image, name, location, id, dob, description, {services: price}
 
