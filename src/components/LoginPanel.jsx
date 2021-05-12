@@ -27,14 +27,16 @@ export default function LoginPanel ({users, currentUser, setCurrentUser, usernam
         </section>
     ) : (
         <section>
-            <p>Please input Username and Password</p>
-                <form>                
-                        <label htmlFor="userField">Username: </label>
-                        <input type="text" id="userField" name="userField" maxLength="16" onChange={(e) => setUsername(e.target.value)}/><br/>
-                        <label htmlFor="passField">Password:</label>
-                        <input type="password" id="passField" name="passField" maxLength="16"onChange={(e) => setPassword(e.target.value)}/><br/>
-                </form>
-            <button className="loginSubmitButton" onClick={() => loginSubmitButton()}>Submit</button>
+            <div id="login-container">
+                    <form>     
+                        <h1>Please input Username and Password</h1>           
+                            <label htmlFor="userField">Username: </label>
+                            <input type="text" id="userField" name="userField" placeholder="Enter Username" maxLength="16" onChange={(e) => setUsername(e.target.value)}/><br/>
+                            <label htmlFor="passField">Password:</label>
+                            <input type="password" placeholder ="Enter Password" id="passField" name="passField" maxLength="16"onChange={(e) => setPassword(e.target.value)}/><br/>
+                    </form>
+                <button className="loginSubmitButton" onClick={() => loginSubmitButton()}>Submit</button>
+            </div>
         </section>
         )
 }
