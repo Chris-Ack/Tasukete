@@ -3,9 +3,24 @@ import "./styles/App.css";
 import axios from "axios";
 import HelperPanel from './components/helperpanel';
 import Formpage from "./components/formpage";
+import LoginPanel from "./components/LoginPanel.jsx"
 
 function App() {
+
   const [test, setTest] = useState([]);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [users, setUsers] = useState([]);
+  const [currentUser, setCurrentUser] = useState([])
+
+  async function userCall() {
+    try {
+      const res = await axios.get('/api/tasukete/users');
+      setUsers(res.data);
+      } catch (e) {
+      console.error("Error test", e);
+    }
+  }
 
   async function testCall() {
     try {
@@ -19,7 +34,8 @@ function App() {
   }
 
   useEffect(() => {
-    testCall();
+    //testCall();
+    userCall();
   }, []);
 
   return (
@@ -33,6 +49,18 @@ function App() {
 
         {/* {component inserted only for testing purposes, to remove} */}
         <Formpage />
+
+        <div>
+          <LoginPanel
+          users = {users}
+          currentUser = {currentUser}
+          setCurrentUser = {setCurrentUser}
+          username = {username}
+          setUsername = {setUsername}
+          password = {password}
+          setPassword = {setPassword}
+          />
+        </div>
       </div>
     </>
   );
