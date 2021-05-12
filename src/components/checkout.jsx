@@ -19,7 +19,6 @@ export default function Checkout() {
             );
         }
     }, [message]);
-    console.log(message);
 
     const handleClick = async (event) => {
         const stripe = await stripePromise;
