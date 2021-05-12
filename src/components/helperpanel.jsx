@@ -36,12 +36,16 @@ export default function HelperPanel() {
 
     return (
         <>
+            <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
             <div className="helper-panel">
-                <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
                 <div className="helper-information">
                     {/* TODO check what info database holds */}
                     <h3>{information.name} is ready to help...</h3>
                     <img src={information.picture} id="helper-picture" alt="helper-picture"/>
+                </div>
+                <div>
+                <h3>{information.name} can help you with...</h3>
+                <p>insert order info here</p>
                 </div>
                 <div id="button-container">
                 <button>Next</button>
