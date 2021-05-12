@@ -8,13 +8,18 @@ const services = [{ name: 'Administration', price: 2500 }, { name: 'Banking', pr
 
 
 export default function FormPage() {
+    const [serviceSelected, setServiceSelected] = useState({});
+
+    const handleClick = (e) => {
+        console.log(e);
+    }
 
     return (
         <>
             <div id="form-container">
                 <h1>Give us some more information?</h1>
                 <p>These information shall be used to select the right person to help you</p>
-                <form>
+                <form id="info-form">
                     <label for="user-name">Name: </label>
                     <input type="text" id="user-name" /><br />
                     <label for="user-contact">Contact: </label>
@@ -40,10 +45,11 @@ export default function FormPage() {
                         </select>
                     </div>
                     <div id="description-container">
-                        <label htmlFor="">
+                        <label for="problem-description">
                             <textarea name="problem description" id="problem-description" cols="30" rows="5"></textarea>
                         </label>
-                    </div>
+                    </div>      
+                <input type="submit" form="info-form" id='info-form-button' onClick={handleClick} value="Submit"/>
                 </form>
             </div>
         </>

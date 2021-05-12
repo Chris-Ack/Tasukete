@@ -38,10 +38,8 @@ export default function HelperPanel() {
 
     return (
         <>
-            <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
             <div className="helper-panel">
                 {/* helpers.filter(helper => { 
-
                 } ) */}
                 <div className="helper-information">
                     {/* TODO check what info database holds */}
