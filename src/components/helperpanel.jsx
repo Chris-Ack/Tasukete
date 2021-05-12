@@ -7,13 +7,13 @@ import CheckoutButton from './checkout'
 export default function HelperPanel() {
     //TODO fetch information from database: image, name, location, id, dob, description, {services: price}
 
-    const [information, setInformation] = useState([])
+    const [helpers, setHelpers] = useState([])
     // const [orderInfo, setOrderInfo] = useState([])
 
-    const getHelper = async() => {
+    const getHelpers = async() => {
         //TODO check the route
-        const res = await axios.get('/api/helper/:name');
-        setInformation(res.data);
+        const res = await axios.get('/api/tasukete/helpers');
+        setHelpers(res.data);
     }
 
     // const getOrderInfo = async() => {
@@ -31,7 +31,7 @@ export default function HelperPanel() {
     // }
 
     useEffect(() => {
-        getHelper();
+        getHelpers();
         // getOrderInfo();
     }, []);
 
@@ -40,13 +40,16 @@ export default function HelperPanel() {
         <>
             <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
             <div className="helper-panel">
+                {/* helpers.filter(helper => { 
+
+                } ) */}
                 <div className="helper-information">
                     {/* TODO check what info database holds */}
-                    <h3>{information.name} is ready to help...</h3>
-                    <img src={information.picture} id="helper-picture" alt="helper-picture"/>
+                    <h3>{helper.first_name} is ready to help...</h3>
+                    <img src={helper.first_name} id="helper-picture" alt="helper-picture"/>
                 </div>
                 <div>
-                <h3>{information.name} can help you with...</h3>
+                <h3>{helper.first_name} can help you with...</h3>
                 <p>insert order info here</p>
                 </div>
                 <div id="button-container">
