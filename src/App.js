@@ -24,7 +24,6 @@ function App() {
   return (
     <>
       <div className="App">
-        <h1>HELLO THIS IS definitely not GAETAN</h1>
         <div className="container">
           {test.map((element, index) => (
             <p className="test" key={index}>
