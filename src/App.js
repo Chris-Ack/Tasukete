@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from "react-router-dom";
 import "./styles/App.css";
 import axios from "axios";
 import HelperPanel from './components/helperpanel';
 import Formpage from "./components/formpage";
 import LoginPanel from "./components/LoginPanel.jsx"
 
+
 function App() {
 
-  const [test, setTest] = useState([]);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState([]);
@@ -22,31 +23,55 @@ function App() {
     }
   }
 
-  async function testCall() {
-    try {
-      const res = await axios.get('/v1/payment_intents/:id');
-      console.log(res.data)
-      setTest(res.data);
-      console.log(test);
-    } catch (e) {
-      console.error("Error test", e);
-    }
-  }
 
   useEffect(() => {
-    //testCall();
     userCall();
   }, []);
 
   return (
-    <>
+    <div className="App">
+      <Router>
+         
+      <Route path="/login">
+        <LoginPanel
+          users = {users}
+          currentUser = {currentUser}
+          setCurrentUser = {setCurrentUser}
+          username = {username}
+          setUsername = {setUsername}
+          password = {password}
+          setPassword = {setPassword}
+          />
+      </Route>
+      <Route path="/formpage">
+        <Formpage
+          />
+      </Route>
+       <Route path="/HelperPanel">
+         <HelperPanel />
+       </Route>
+
+      
+      </Router>
+    </div>
+  )
+}
+
+
+export default App;
+
+
+
+
+
+
+/*
+
+<>
       <div className="App">
-        <div className="container">
-          {test}
-        </div>
         <HelperPanel />
 
-        {/* {component inserted only for testing purposes, to remove} */}
+        {/* {component inserted only for testing purposes, to remove} }
         <Formpage />
 
         <div>
@@ -62,7 +87,4 @@ function App() {
         </div>
       </div>
     </>
-  );
-}
-
-export default App;
+*/

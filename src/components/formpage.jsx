@@ -3,7 +3,7 @@ import wards from './data/tokyowards.json'
 
 
 const services = [{ name: 'Administration', price: 2500 }, { name: 'Banking', price: 2500 },
-{ name: 'Phone', price: 1500 }, { name: 'Postal', price: 800 }, { name: 'apartments', price: 2000 },
+{ name: 'Phone', price: 1500 }, { name: 'Postal', price: 800 }, { name: 'Apartments', price: 2000 },
 { name: 'Immigration', price: 2000 }]
 
 
