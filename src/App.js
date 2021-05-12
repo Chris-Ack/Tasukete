@@ -9,7 +9,8 @@ function App() {
 
   async function testCall() {
     try {
-      const res = await axios.get("/api/tasukete");
+      const res = await axios.get('/v1/payment_intents/:id');
+      console.log(res.data)
       setTest(res.data);
       console.log(test);
     } catch (e) {
@@ -26,11 +27,7 @@ function App() {
       <div className="App">
         <h1>HELLO THIS IS definitely not GAETAN</h1>
         <div className="container">
-          {test.map((element, index) => (
-            <p className="test" key={index}>
-              {element.name}
-            </p>
-          ))}
+          {test}
         </div>
         <HelperPanel />    
       </div>
