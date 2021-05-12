@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./styles/App.css";
 import axios from "axios";
 import HelperPanel from './components/helperpanel';
-
+import Formpage from "./components/formpage";
 
 function App() {
   const [test, setTest] = useState([]);
@@ -32,7 +32,10 @@ function App() {
             </p>
           ))}
         </div>
-        <HelperPanel />    
+        <HelperPanel />
+
+        {/* {component inserted only for testing purposes, to remove} */}
+        <Formpage />
       </div>
     </>
   );
