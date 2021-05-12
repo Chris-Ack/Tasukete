@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./styles/App.css";
 import axios from "axios";
+import HelperPanel from './components/helperpanel';
+
 
 function App() {
   const [test, setTest] = useState([]);
@@ -27,6 +29,7 @@ function App() {
         <div className="container">
           {test}
         </div>
+        <HelperPanel />    
       </div>
     </>
   );
