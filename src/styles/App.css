@@ -1,0 +1,134 @@
+.App {
+  text-align: center;
+  display: inline-block;
+  justify-content: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #334F65;
+}
+
+.helper-panel {
+  display: inline-block;
+  justify-content: center;
+}
+
+.helper-information {
+  display: inline-block;
+  justify-content: center;
+  background-color: #E5DFD2;
+  width: 200px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px #988890;
+}
+
+button {
+  background-color: #E5DFD2;
+  color: #334F65;
+  margin: 5px;
+  border-radius: 8px;
+  border-color: #916257;
+}
+
+#button-container {
+  display: inline-block, wrap;
+  justify-content: center;
+}
+
+#helper-photo {
+  width: 300px;
+  border-radius: 10px;
+  border-color: #916257;
+}
+
+#banner-photo {
+  width: 100%;
+  height:auto;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 650%) {
+  div {
+    display: flex;
+    justify-content: center;
+  }
+}
+/* 
+#E5DFD2 white
+#84756D brown
+#988890 lavender
+#916257 burnt orange
+#334F65 blue */
+
+input[type=text], input[type=password]{
+  width:20%;
+  padding:7px 10px;
+  margin: 10px 0;
+  display:inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  }
+
+  .loginSubmitButton{
+    background-color:#4CAF50;
+    width: 10%;
+    padding: 9px 5px;
+    margin:10px 0px 0px 35px;
+    cursor:pointer;
+    border:none;
+    color:#ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    }
+
+   
+    .loginSubmitButton:hover {
+      opacity:0.8;
+    }
+    #login-container{
+      background-color: #005f73;
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width:600;
+      height: 300px;
+      text-align: center;
+  }
