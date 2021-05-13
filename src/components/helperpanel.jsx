@@ -45,7 +45,7 @@ export default function HelperPanel() {
                     <img src={information.picture} id="helper-picture" alt="helper-picture"/>
                 </div>
                 <div id="button-container">
-                <button>Next</button>
+                <button id="next-btn">Next</button>
                 <CheckoutButton /> 
                 </div>
 
