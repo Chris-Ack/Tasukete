@@ -39,7 +39,6 @@ export default function HelperPanel() {
     return (
         <>
             <div className="helper-panel">
-                <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
                 <div className="helper-information">
                     {/* TODO check what info database holds */}
                     <h3>{information.name} is ready to help...</h3>
