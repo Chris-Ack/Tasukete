@@ -5,6 +5,8 @@ import axios from "axios";
 import HelperPanel from './components/helperpanel';
 import Formpage from "./components/formpage";
 import LoginPanel from "./components/LoginPanel.jsx"
+import ThankYou from "./components/thankyoupage"
+import Checkout from "./components/checkout"
 
 
 function App() {
@@ -30,9 +32,14 @@ function App() {
 
   return (
     <div className="App">
+    <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
       <Router>
          
+<<<<<<< HEAD
       <Route path="/login">
+=======
+      <Route exact path={["/login", "/"]}>
+>>>>>>> 41b1b83a522a310815d0bb628b3a7ae20d740d56
         <LoginPanel
           users = {users}
           currentUser = {currentUser}
@@ -50,7 +57,17 @@ function App() {
         <Formpage />rPanel">
          <HelperPanel />
        </Route>
+<<<<<<< HEAD
 
+=======
+       <Route path="/checkout">
+         <Checkout />
+       </Route>
+
+       <Route path="/thankyou">
+         <ThankYou />
+       </Route>
+>>>>>>> 41b1b83a522a310815d0bb628b3a7ae20d740d56
       
       </Router>
     </div>

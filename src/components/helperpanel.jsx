@@ -39,8 +39,6 @@ export default function HelperPanel() {
     return (
         <>
             <div className="helper-panel">
-                {/* helpers.filter(helper => { 
-                } ) */}
                 <div className="helper-information">
                     {/* TODO check what info database holds */}
                     <h3>{helpers.first_name} is ready to help...</h3>
