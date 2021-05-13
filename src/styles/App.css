@@ -76,7 +76,11 @@ button {
   border-color: #916257;
   padding: 8px;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-  margin: 15px;
+  margin: 5px;
+}
+
+#next-btn {
+  margin-top: 15px;
 }
 
 #button-container {

@@ -2,14 +2,16 @@ import React, { useEffect, useState } from 'react';
 import wards from './data/tokyowards.json'
 import { BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory } from "react-router-dom";
 
-
-const services = [{ name: 'Administration', price: 2500 }, { name: 'Banking', price: 2000 },
-{ name: 'Phone', price: 1500 }, { name: 'Postal', price: 800 }, { name: 'Apartments', price: 2000 },
-{ name: 'Immigration', price: 2000 }]
+// services: ["banking", "apartments", "immigration", "city office", "medical", "legal", "mobile"]
 
 
-export default function FormPage() {
-    const [userInfo, setUserInfo] = useState({});
+const services = [{ name: 'legal', price: 2500 }, { name: 'banking', price: 2000 },
+{ name: 'mobile', price: 1500 }, { name: 'postal', price: 800 }, { name: 'apartments', price: 2000 },
+{ name: 'immigration', price: 2000, name: 'city office', price: 2000, name: 'medical', price: 2000, }]
+
+
+export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserInfo, matchingHelpers, setMatchingHelpers}) {
+    
     let history = useHistory();
 
     const redirect = () => {   
@@ -21,19 +23,39 @@ export default function FormPage() {
     let name = document.getElementById('user-name').value;
     let contact = document.getElementById('user-contact').value;
     let date = document.getElementById('calendar-form-dropdown').value;
+    let service = document.getElementById('services-list').value;
     let location = document.getElementById('location-list').value;
     let description = document.getElementById('problem-description').value;
 
     // assign form entries to new object and update the state
-    let newInfo = Object.assign({}, userInfo);
+    let newInfo = {};
     newInfo.name = name;
     newInfo.contact = contact;
     newInfo.date = date;
+    newInfo.service = service;
     newInfo.location = location;
     newInfo.description = description;
 
-    setUserInfo(newInfo);
+    setUserInfo(userInfo.concat(newInfo));
+    console.log(userInfo);
+        
+    }
+
+    const getCorrectHelpers = () => {
+        let rightHelper = helperInfo.filter((helper) => {
+            console.log('😀', helper.services[5])
+            console.log('🍆', userInfo[0].service)
+           let tempVar = helper.services.includes(userInfo[0].service);
+           return tempVar;
+        });
+        setMatchingHelpers(rightHelper)
+        console.log(matchingHelpers)
   }
+
+//   useEffect(() => {
+//         getCorrectHelpers();
+//     }, []);
+
     return (
         <>
             <div className="form-container">
@@ -41,7 +63,7 @@ export default function FormPage() {
                 <p>This information will be used to select the right person to help you.</p>
                 <form>
                     <label for="user-name">Name: </label>
-                    <input type="text" id="user-name" /><br />
+                    <input type="text" id="user-name" value="John S."/><br />
                     <label for="user-contact">Contact: </label>
                     <input type="text" id="user-contact" value="079-7865-9876"/>
                     <div id="form-calendar">
@@ -69,7 +91,7 @@ export default function FormPage() {
                             <textarea name="problem description" id="problem-description" cols="30" rows="5" value="I would like to open an account at Jp PostBank. Thank you very much for your help!"></textarea>
                         </label>
                     </div>
-                    <button className="submitFormButton" onClick={() => {redirect(); passInformation()}}>Submit Information</button>
+                    <button className="submitFormButton" onClick={() => {redirect(); passInformation(); getCorrectHelpers()}}>Submit Information</button>
                 </form>
             </div>
         </>

@@ -14,7 +14,10 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState([]);
-  const [currentUser, setCurrentUser] = useState([])
+  const [currentUser, setCurrentUser] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
+  const [helperInfo, setHelperInfo] = useState([]);
+  const [matchingHelpers, setMatchingHelpers] = useState([]);
 
   async function userCall() {
     try {
@@ -25,8 +28,19 @@ function App() {
     }
   }
 
+  async function helperCall() {
+    try {
+      const res = await axios.get('/api/tasukete/helpers');
+      setHelperInfo(res.data);
+      } catch (e) {
+      console.error("Error test", e);
+    }
+  }
+
+
   useEffect(() => {
     userCall();
+    helperCall();
   }, []);
 
   return (
@@ -47,10 +61,23 @@ function App() {
       </Route>
       <Route path="/formpage">
         <Formpage
+          userInfo={userInfo}
+          setUserInfo={setUserInfo}
+          helperInfo={helperInfo}
+          setHelperInfo={setHelperInfo}
+          matchingHelpers={matchingHelpers}
+          setMatchingHelpers={setMatchingHelpers}
           />
       </Route>
        <Route path="/helperpanel">
-         <HelperPanel />
+         <HelperPanel 
+         helperInfo={helperInfo}
+         setHelperInfo={setHelperInfo}
+         userInfo={userInfo}
+         setUserInfo={setUserInfo}
+         matchingHelpers={matchingHelpers}
+         setMatchingHelpers={setMatchingHelpers}
+         />
        </Route>
        <Route path="/checkout">
          <Checkout />
