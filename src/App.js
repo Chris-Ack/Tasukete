@@ -6,6 +6,7 @@ import HelperPanel from './components/helperpanel';
 import Formpage from "./components/formpage";
 import LoginPanel from "./components/LoginPanel.jsx"
 import ThankYou from "./components/thankyoupage"
+import Checkout from "./components/checkout"
 
 
 function App() {
@@ -51,6 +52,10 @@ function App() {
        <Route path="/helperpanel">
          <HelperPanel />
        </Route>
+       <Route path="/checkout">
+         <Checkout />
+       </Route>
+
        <Route path="/thankyou">
          <ThankYou />
        </Route>

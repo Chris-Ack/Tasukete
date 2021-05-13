@@ -42,7 +42,7 @@ exports.seed = function(knex) {
     })
     .then(function () {
       return knex('users').insert([
-        {username: "yoshas", first_name: "Yoshio", last_name: "Hasegawa", password: "tasukete123", image: "/assets/yoshio.jpg"},
+        {username: "JohnS", first_name: "John", last_name: "Syrup", password: "tasukete123", image: "/assets/john.jpg"},
         {username: "chrack", first_name: "Chris", last_name: "Ackermann", password: "tasukete123", image: "undefined"}
       ])
     })
