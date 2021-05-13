@@ -12,7 +12,7 @@ app.use(cors({ credentials: true, origin: true }));
 app.use(express.static(path.resolve(__dirname, "..", "build")));
 
 //Stripe API POST
-const YOUR_DOMAIN = 'http://localhost:3000/checkout';
+const YOUR_DOMAIN = process.env.YOUR_DOMAIN;
 
 app.post('/api/create-checkout-session', async (req, res) => {
   const session = await stripe.checkout.sessions.create({
