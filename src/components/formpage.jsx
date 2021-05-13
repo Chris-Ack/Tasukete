@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import wards from './data/tokyowards.json'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory } from "react-router-dom";
 
 
 const services = [{ name: 'Administration', price: 2500 }, { name: 'Banking', price: 2500 },
@@ -8,6 +9,13 @@ const services = [{ name: 'Administration', price: 2500 }, { name: 'Banking', pr
 
 
 export default function FormPage() {
+
+    let history = useHistory();
+
+    const redirect = () => {
+        history.push('/helperPanel')
+  }
+
 
     return (
         <>
@@ -44,6 +52,7 @@ export default function FormPage() {
                             <textarea name="problem description" id="problem-description" cols="30" rows="5"></textarea>
                         </label>
                     </div>
+                    <button className="submitFormButton" onClick={() => redirect()}>Submit Information</button>
                 </form>
             </div>
         </>
