@@ -49,14 +49,28 @@ body {
 
 .form-container {
   display: inline-block;
-  justify-content: center;
   background-color: #E5DFD2;
   width: auto;
-  border-radius: 3px;
+  border-radius: 4px;
   box-shadow: 3px 3px 3px #988890;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-  margin: 20px;
   color: #334F65;
+  padding: 5px;
+  border-color: solid red;
+}
+
+.form-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: .2s all ease-in-out;
+  width: 80px;
 }
 
 .helper-information {
@@ -92,6 +106,7 @@ button {
   width: 300px;
   border-radius: 10px;
   border-color: #916257;
+  background-blend-mode: normal, hard-light;
 }
 
 #banner-photo {
