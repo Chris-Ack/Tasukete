@@ -15,7 +15,7 @@ export default function HelperPanel({ helperInfo, setHelperInfo, userInfo, setUs
 
     function nextHelper() {
         if (i < matchingHelpers.length) {i++}
-        else if (i = matchingHelpers.length) {i = 0}
+        else if (i === matchingHelpers.length) {i = 0}
     }
 
     
