@@ -7,11 +7,11 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory } fr
 
 const services = [{ name: 'legal', price: 2500 }, { name: 'banking', price: 2000 },
 { name: 'mobile', price: 1500 }, { name: 'postal', price: 800 }, { name: 'apartments', price: 2000 },
-{ name: 'immigration', price: 2000}, {name: 'city office', price: 2000}, {name: 'medical', price: 2000, }]
+{ name: 'immigration', price: 2000}, {name: 'city office', price: 2000}, {name: 'medical', price: 2000}]
 
 
 export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserInfo, matchingHelpers, setMatchingHelpers}) {
-    
+
     let history = useHistory();
 
     const redirect = () => {   
@@ -19,6 +19,7 @@ export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserIn
   }
 
   const passInformation = () => {
+
       // gets the form entries
     let name = document.getElementById('user-name').value;
     let contact = document.getElementById('user-contact').value;
@@ -35,26 +36,16 @@ export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserIn
     newInfo.service = service;
     newInfo.location = location;
     newInfo.description = description;
-
-    setUserInfo(userInfo.concat(newInfo));
+    console.log(newInfo)
+    // setUserInfo([1,2])
+    setUserInfo(userInfo.concat([newInfo]));
     console.log(userInfo);
-        
-    }
+}
 
-    const getCorrectHelpers = () => {
-        let rightHelper = helperInfo.filter((helper) => {
-            console.log('😀', helper.services[5])
-            console.log('🍆', userInfo[0].service)
-           let tempVar = helper.services.includes(userInfo[0].service);
-           return tempVar;
-        });
-        setMatchingHelpers(rightHelper)
-        console.log(matchingHelpers)
-  }
 
-//   useEffect(() => {
-//         getCorrectHelpers();
-//     }, []);
+  useEffect(() => {
+        passInformation()
+    }, []);
 
     return (
         <>
@@ -62,16 +53,16 @@ export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserIn
                 <h1>Please enter the following info:</h1>
                 <p>This information will be used to select the right person to help you.</p>
                 <form>
-                    <label for="user-name">Name: </label>
+                    <label for="user-name">Name: </label><br/>
                     <input type="text" id="user-name" value="John S."/><br />
-                    <label for="user-contact">Contact: </label>
+                    <label for="user-contact">Contact: </label><br/>
                     <input type="text" id="user-contact" value="079-7865-9876"/>
                     <div id="form-calendar">
-                        <label for="calendar-form-dropdowm">When do you need help: </label>
+                        <label for="calendar-form-dropdowm">Date requested: </label>
                         <input type="date" id="calendar-form-dropdown" data-data-inline-picker="true" />
                     </div>
                     <div id="services-container">
-                        <label for="services-list">You need help with: </label>
+                        <label for="services-list">Help me with: </label>
                         <select name="services list" id="services-list">
                             {services.map((service) => {
                                 return <option value={service.name.toLowerCase()}>{service.name}: {service.price}</option>
@@ -91,7 +82,7 @@ export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserIn
                             <textarea name="problem description" id="problem-description" cols="30" rows="5" value="I would like to open an account at Jp PostBank. Thank you very much for your help!"></textarea>
                         </label>
                     </div>
-                    <button className="submitFormButton" onClick={() => {redirect(); passInformation(); getCorrectHelpers()}}>Submit Information</button>
+                    <button className="submitFormButton" onClick={() => {redirect(); passInformation()}}>Submit Information</button>
                 </form>
             </div>
         </>

@@ -17,7 +17,7 @@ function App() {
   const [currentUser, setCurrentUser] = useState([]);
   const [userInfo, setUserInfo] = useState([]);
   const [helperInfo, setHelperInfo] = useState([]);
-  const [matchingHelpers, setMatchingHelpers] = useState([]);
+
 
   async function userCall() {
     try {
@@ -36,7 +36,6 @@ function App() {
       console.error("Error test", e);
     }
   }
-
 
   useEffect(() => {
     userCall();
@@ -65,8 +64,6 @@ function App() {
           setUserInfo={setUserInfo}
           helperInfo={helperInfo}
           setHelperInfo={setHelperInfo}
-          matchingHelpers={matchingHelpers}
-          setMatchingHelpers={setMatchingHelpers}
           />
       </Route>
        <Route path="/helperpanel">
@@ -75,17 +72,11 @@ function App() {
          setHelperInfo={setHelperInfo}
          userInfo={userInfo}
          setUserInfo={setUserInfo}
-         matchingHelpers={matchingHelpers}
-         setMatchingHelpers={setMatchingHelpers}
          />
        </Route>
        <Route path="/checkout">
          <Checkout />
        </Route>
-       <Route path="/HelperPanel">
-         <HelperPanel />
-       </Route>
-
        <Route path="/thankyou">
          <ThankYou />
        </Route>
