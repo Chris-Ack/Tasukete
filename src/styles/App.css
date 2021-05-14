@@ -5,7 +5,7 @@
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
@@ -29,6 +29,11 @@
 
 .App-link {
   color: #61dafb;
+} */
+
+p {
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 body {
@@ -39,7 +44,7 @@ body {
 }
 
 .helper-panel {
-  display: inline-block;
+  display: block;
   justify-content: center;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #334F65;
@@ -56,7 +61,6 @@ body {
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   color: #334F65;
   padding: 5px;
-  border-color: solid red;
 }
 
 .form-container label {
@@ -70,8 +74,23 @@ body {
   padding: 0;
   text-align: center;
   transition: .2s all ease-in-out;
-  width: 80px;
+  width: 200px;
+  color: #916257;
+  font-weight: 500;
 }
+
+/* @media only screen and (max-width: 650px) {
+  .helper-panel {
+  padding-left: 40px;
+  padding-right: 40px;
+  }
+} */
+
+/* @media only screen and (max-width: 768px) {
+  .helper-panel {
+    width:750px;
+  }
+} */
 
 .helper-information {
   display: inline-block;
@@ -135,15 +154,30 @@ button {
 #916257 burnt orange
 #334F65 blue */
 
-input[type=text], input[type=password], .locations-list, .services-list {
-  width:155px;
-  padding:7px 10px;
+
+input[type=text], input[type=password], input[type=date], .locations-list, .services-list, select {
+  width:20%;
+  padding:15px 10px;
   margin: 10px 0;
   display:inline-block;
   border: 1px solid #ccc;
+  border-radius: 5px;
   box-sizing: border-box;
   font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 15px 4 px rgba(0,0,0,0.06);
+  width: 150px;
   }
+
+  textarea {
+    width:150%;
+    justify-content: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 15px 4 px rgba(0,0,0,0.06);
+    width: 300px;
+    }
 
   /* .loginSubmitButton{
     background-color:#4CAF50;
@@ -161,6 +195,7 @@ input[type=text], input[type=password], .locations-list, .services-list {
     button :hover {
       opacity:0.8;
     }
+
     #login-container{
       background-color: #E5DFD2;
       position: absolute;
