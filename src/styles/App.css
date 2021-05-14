@@ -136,7 +136,7 @@ button {
 #334F65 blue */
 
 input[type=text], input[type=password], .locations-list, .services-list {
-  width:20%;
+  width:155px;
   padding:7px 10px;
   margin: 10px 0;
   display:inline-block;
