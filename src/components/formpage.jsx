@@ -50,19 +50,19 @@ export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserIn
     return (
         <>
             <div className="form-container">
-                <h1>Please enter the following info:</h1>
+                <h1>Your Request:</h1>
                 <p>This information will be used to select the right person to help you.</p>
                 <form>
                     <label for="user-name">Name: </label><br/>
-                    <input type="text" id="user-name" value="John S."/><br />
+                    <input type="text" id="user-name" value="John S." size="10" /><br />
                     <label for="user-contact">Contact: </label><br/>
                     <input type="text" id="user-contact" value="079-7865-9876"/>
                     <div id="form-calendar">
-                        <label for="calendar-form-dropdowm">Date requested: </label>
+                        <label for="calendar-form-dropdowm">Date requested: </label><br />
                         <input type="date" id="calendar-form-dropdown" data-data-inline-picker="true" />
                     </div>
                     <div id="services-container">
-                        <label for="services-list">Help me with: </label>
+                        <label for="services-list">Help me with: </label><br/>
                         <select name="services list" id="services-list">
                             {services.map((service) => {
                                 return <option value={service.name.toLowerCase()}>{service.name}: {service.price}</option>
@@ -70,7 +70,7 @@ export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserIn
                         </select>
                     </div>
                     <div id="location-container">
-                        <label for="location-list">Where: </label>
+                        <label for="location-list">Where: </label><br/>
                         <select name="location list" id="location-list">
                             {wards.map((ward) => {
                                 return <option value={ward.name.toLowerCase()}>{ward.name}</option>
@@ -78,9 +78,10 @@ export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserIn
                         </select>
                     </div>
                     <div id="description-container">
-                        <label htmlFor="">
-                            <textarea name="problem description" id="problem-description" cols="30" rows="5" value="I would like to open an account at Jp PostBank. Thank you very much for your help!"></textarea>
-                        </label>
+                        <label htmlFor="">Description:</label><br/>
+                            <textarea name="problem description" id="problem-description" cols="50" rows="4" 
+                            value="I would like to open an account at Jp PostBank. Thank you very much for your help!"></textarea>
+                        
                     </div>
                     <button className="submitFormButton" onClick={() => {redirect(); passInformation()}}>Submit Information</button>
                 </form>
