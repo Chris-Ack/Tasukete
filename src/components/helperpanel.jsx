@@ -4,49 +4,33 @@ import CheckoutButton from './checkout'
 
 
 
-export default function HelperPanel() {
-    //TODO fetch information from database: image, name, location, id, dob, description, {services: price}
+export default function HelperPanel({ helperInfo, setHelperInfo, userInfo, setUserInfo, matchingHelpers, setMatchingHelpers }) {
+    let i = 0
 
-    const [information, setInformation] = useState([])
-    // const [orderInfo, setOrderInfo] = useState([])
+    // useEffect(() => {
+        
+    //     if (rightHelper.length !== 0) {
+    //     getCorrectHelpers(); }
+    // }, []);
 
-    const getHelper = async() => {
-        //TODO check the route
-        const res = await axios.get('/api/helper/:name');
-        setInformation(res.data);
+    function nextHelper() {
+        if (i < matchingHelpers.length) {i++}
+        else if (i = matchingHelpers.length) {i = 0}
     }
 
-    // const getOrderInfo = async() => {
-    //     //TODO check the route for service database
-    //     const res = await axios.get('/api/orderinfo/:orderid');
-    //     setOrderInfo(res.data);
-    // }
-
-    // function orderInfo() {
-    //     return (
-    //         <div>
-    //             <h1></h1>
-    //         </div>
-    //     )
-    // }
-
-    useEffect(() => {
-        getHelper();
-        // getOrderInfo();
-    }, []);
-
+    
 
     return (
         <>
             <div className="helper-panel">
                 <div className="helper-information">
                     {/* TODO check what info database holds */}
-                    <h3>{information.name} is ready to help...</h3>
-                    <img src={information.picture} id="helper-picture" alt="helper-picture"/>
+                    <h3>{matchingHelpers[i].first_name} is ready to help...</h3>
+                    <img src={matchingHelpers[i].image} id="helper-picture" alt="helper-picture" />
                 </div>
                 <div id="button-container">
-                <button>Next</button>
-                <CheckoutButton /> 
+                    <button id="next-btn" onClick={nextHelper}></button>
+                    <CheckoutButton />
                 </div>
 
 
