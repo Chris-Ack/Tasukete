@@ -1,4 +1,4 @@
-“This was developed during our time as a student at Code Chrysalis”
+“This was developed during our time as students at Code Chrysalis”
 
 <img src="public/asset/logo.png" width="150px">
 
