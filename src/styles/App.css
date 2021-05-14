@@ -61,7 +61,7 @@ body {
 
 .form-container label {
   background: transparent;
-  border: 1px solid red;
+  border: 1px solid transparent;
   border-radius: 2px;
   display: inline-block;
   height: 26px;
