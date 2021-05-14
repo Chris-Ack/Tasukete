@@ -221,5 +221,8 @@ input[type=text], input[type=password], input[type=date], .locations-list, .serv
     border-radius: 3px;
     box-shadow: 3px 3px 3px #988890;
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
-    
+  }
+
+  #thankyou-section {
+    margin-top: 2em;
   }
