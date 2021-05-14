@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect, useHistory } fr
 
 const services = [{ name: 'legal', price: 2500 }, { name: 'banking', price: 2000 },
 { name: 'mobile', price: 1500 }, { name: 'postal', price: 800 }, { name: 'apartments', price: 2000 },
-{ name: 'immigration', price: 2000, name: 'city office', price: 2000, name: 'medical', price: 2000, }]
+{ name: 'immigration', price: 2000}, {name: 'city office', price: 2000}, {name: 'medical', price: 2000, }]
 
 
 export default function FormPage({helperInfo, setHelperInfo, userInfo, setUserInfo, matchingHelpers, setMatchingHelpers}) {
