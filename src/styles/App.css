@@ -175,3 +175,15 @@ input[type=text], input[type=password], .locations-list, .services-list {
       color: #334F65;
       font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   }
+
+
+  .thankyou-container {
+    display: inline-block;
+    justify-content: center;
+    background-color: #E5DFD2;
+    width: 300px;
+    height: 200px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px #988890;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  }
