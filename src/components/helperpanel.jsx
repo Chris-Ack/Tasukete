@@ -24,8 +24,9 @@ image: "/assets/chirs.jpg", services: ["apartments", "immigration"]}
 ]
 
 export default function HelperPanel({ helperInfo, setHelperInfo, userInfo, setUserInfo }) {
-    let i = 0
-    const matchingHelpers = [helpers];
+    
+    // const matchingHelpers = [helpers];
+    const [matchingHelpers, setMatchingHelpers] = useState([helpers[0]]);
     // const [matchingHelpers, setMatchingHelpers] = useState([]);
     /*
     const getCorrectHelpers = () => {
@@ -50,18 +51,35 @@ export default function HelperPanel({ helperInfo, setHelperInfo, userInfo, setUs
     */
 
     function nextHelper() {
-        if (i < helpers.length) {i++}
-        else if (i < helpers.length-1) {i = 0}
+        let i = 0
+        if (i < helpers.length) {i++; return setMatchingHelpers(helpers[i])}
+        else if (i = helpers.length) {i = 0}
         console.log(helpers[i].first_name)
+        console.log(helpers[i+1].first_name)
+        
     }
+
+    function displayHelperPanel() {
+        return (
+            <div className="helper-information">
+            <h3 key={matchingHelpers[0].first_name}>{matchingHelpers[0].first_name} is ready to help...</h3>
+            <img src={matchingHelpers[0].image} id="helper-picture" alt="helper-picture" />
+            <p>{matchingHelpers[0].description}</p>
+        </div>
+            )
+    }
+
+    useEffect(() => {
+        displayHelperPanel();
+    }, [matchingHelpers])
 
     return (
         <>
             <div className="helper-panel">
-                <div className="helper-information">
-                    <h3 key={helpers[i].first_name}>{helpers[i].first_name} is ready to help...</h3>
-                    <img src={helpers[i].image} id="helper-picture" alt="helper-picture" />
-                </div>
+                
+                    {displayHelperPanel()}
+                    
+                
                 <div id="button-container">
                     <button id="next-btn" onClick={nextHelper}>Next</button>
                     <CheckoutButton />
