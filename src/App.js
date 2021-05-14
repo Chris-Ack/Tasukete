@@ -5,6 +5,8 @@ import axios from "axios";
 import HelperPanel from './components/helperpanel';
 import Formpage from "./components/formpage";
 import LoginPanel from "./components/LoginPanel.jsx"
+import ThankYou from "./components/thankyoupage"
+import Checkout from "./components/checkout"
 
 
 function App() {
@@ -12,7 +14,10 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState([]);
-  const [currentUser, setCurrentUser] = useState([])
+  const [currentUser, setCurrentUser] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
+  const [helperInfo, setHelperInfo] = useState([]);
+  const [matchingHelpers, setMatchingHelpers] = useState([]);
 
   async function userCall() {
     try {
@@ -23,16 +28,27 @@ function App() {
     }
   }
 
+  async function helperCall() {
+    try {
+      const res = await axios.get('/api/tasukete/helpers');
+      setHelperInfo(res.data);
+      } catch (e) {
+      console.error("Error test", e);
+    }
+  }
+
 
   useEffect(() => {
     userCall();
+    helperCall();
   }, []);
 
   return (
     <div className="App">
+    <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
       <Router>
          
-      <Route path="/login">
+      <Route exact path={["/login", "/"]}>
         <LoginPanel
           users = {users}
           currentUser = {currentUser}
@@ -45,15 +61,34 @@ function App() {
       </Route>
       <Route path="/formpage">
         <Formpage
+          userInfo={userInfo}
+          setUserInfo={setUserInfo}
+          helperInfo={helperInfo}
+          setHelperInfo={setHelperInfo}
+          matchingHelpers={matchingHelpers}
+          setMatchingHelpers={setMatchingHelpers}
           />
       </Route>
-       <Route path="/HelperPanel">
-         <HelperPanel />
+       <Route path="/helperpanel">
+         <HelperPanel 
+         helperInfo={helperInfo}
+         setHelperInfo={setHelperInfo}
+         userInfo={userInfo}
+         setUserInfo={setUserInfo}
+         matchingHelpers={matchingHelpers}
+         setMatchingHelpers={setMatchingHelpers}
+         />
+       </Route>
+       <Route path="/checkout">
+         <Checkout />
        </Route>
        <Route path="/HelperPanel">
          <HelperPanel />
        </Route>
 
+       <Route path="/thankyou">
+         <ThankYou />
+       </Route>
       
       </Router>
     </div>
