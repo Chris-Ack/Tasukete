@@ -2,6 +2,7 @@
   text-align: center;
   display: inline-block;
   justify-content: center;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 /* .App-logo {
@@ -34,17 +35,42 @@ body {
   display: flex;
   justify-content: center;
   background-color: #334F65;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 .helper-panel {
   display: block;
   justify-content: center;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #334F65;
+  margin: 20px;
+  padding-bottom: 5px;
+}
+
+.form-container {
+  display: inline-block;
   background-color: #E5DFD2;
-  overflow: auto;
-  margin-right: 15px;
-  margin-left: 15px;
-  border-radius: 5px;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.5);
+  width: auto;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px #988890;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #334F65;
+  padding: 5px;
+  border-color: solid red;
+}
+
+.form-container label {
+  background: transparent;
+  border: 1px solid red;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: .2s all ease-in-out;
+  width: 80px;
 }
 
 /* @media only screen and (max-width: 650px) {
@@ -63,20 +89,25 @@ body {
 .helper-information {
   display: inline-block;
   justify-content: center;
-  background-color: #988890;
-  width: auto;
-  border-radius: 4px;
-  box-shadow: 5px 7px 7px rgba(0, 0, 0, 0.2);
-  margin-top: 20px;
-  margin-bottom: 10px;
+  background-color: #E5DFD2;
+  width: 300px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px #988890;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
 }
 
 button {
   background-color: #E5DFD2;
   color: #334F65;
-  margin: 5px;
   border-radius: 8px;
   border-color: #916257;
+  padding: 8px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  margin: 5px;
+}
+
+#next-btn {
+  margin-top: 15px;
 }
 
 #button-container {
@@ -88,6 +119,7 @@ button {
   width: 300px;
   border-radius: 10px;
   border-color: #916257;
+  background-blend-mode: normal, hard-light;
 }
 
 #banner-photo {
@@ -103,13 +135,12 @@ button {
   }
 }
 
-@media only screen and (min-width: 650%) {
+/* @media only screen and (min-width: 650%) {
   div {
     display: flex;
     justify-content: center;
   }
-}
-
+} */
 /* 
 #E5DFD2 white
 #84756D brown
@@ -117,16 +148,17 @@ button {
 #916257 burnt orange
 #334F65 blue */
 
-input[type=text], input[type=password]{
+input[type=text], input[type=password], .locations-list, .services-list {
   width:20%;
   padding:7px 10px;
   margin: 10px 0;
   display:inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   }
 
-  .loginSubmitButton{
+  /* .loginSubmitButton{
     background-color:#4CAF50;
     width: 10%;
     padding: 9px 5px;
@@ -136,14 +168,14 @@ input[type=text], input[type=password]{
     color:#ffffff;
     font-size: 15px;
     font-weight: bold;
-    }
+    } */
 
    
-    .loginSubmitButton:hover {
+    button :hover {
       opacity:0.8;
     }
     #login-container{
-      background-color: #005f73;
+      background-color: #E5DFD2;
       position: absolute;
       top:0;
       bottom: 0;
@@ -153,4 +185,6 @@ input[type=text], input[type=password]{
       width:600;
       height: 300px;
       text-align: center;
+      color: #334F65;
+      font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
   }

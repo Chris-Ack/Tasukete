@@ -14,7 +14,10 @@ function App() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [users, setUsers] = useState([]);
-  const [currentUser, setCurrentUser] = useState([])
+  const [currentUser, setCurrentUser] = useState([]);
+  const [userInfo, setUserInfo] = useState([]);
+  const [helperInfo, setHelperInfo] = useState([]);
+
 
   async function userCall() {
     try {
@@ -25,9 +28,18 @@ function App() {
     }
   }
 
+  async function helperCall() {
+    try {
+      const res = await axios.get('/api/tasukete/helpers');
+      setHelperInfo(res.data);
+      } catch (e) {
+      console.error("Error test", e);
+    }
+  }
 
   useEffect(() => {
     userCall();
+    helperCall();
   }, []);
 
   return (
@@ -35,11 +47,7 @@ function App() {
     <img src="./asset/banner.png" id="banner-photo" alt="banner-photo"/>
       <Router>
          
-<<<<<<< HEAD
-      <Route path="/login">
-=======
       <Route exact path={["/login", "/"]}>
->>>>>>> 41b1b83a522a310815d0bb628b3a7ae20d740d56
         <LoginPanel
           users = {users}
           currentUser = {currentUser}
@@ -51,15 +59,21 @@ function App() {
           />
       </Route>
       <Route path="/formpage">
-        <Formpage/Helpe
-
-        {/* {component inserted only for testing purposes, to remove} */}
-        <Formpage />rPanel">
-         <HelperPanel />
+        <Formpage
+          userInfo={userInfo}
+          setUserInfo={setUserInfo}
+          helperInfo={helperInfo}
+          setHelperInfo={setHelperInfo}
+          />
+      </Route>
+       <Route path="/helperpanel">
+         <HelperPanel 
+         helperInfo={helperInfo}
+         setHelperInfo={setHelperInfo}
+         userInfo={userInfo}
+         setUserInfo={setUserInfo}
+         />
        </Route>
-<<<<<<< HEAD
-
-=======
        <Route path="/checkout">
          <Checkout />
        </Route>
@@ -67,7 +81,6 @@ function App() {
        <Route path="/thankyou">
          <ThankYou />
        </Route>
->>>>>>> 41b1b83a522a310815d0bb628b3a7ae20d740d56
       
       </Router>
     </div>
