@@ -1,0 +1,224 @@
+.App {
+  text-align: center;
+  display: inline-block;
+  justify-content: center;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+/* .App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+} */
+
+p {
+  padding-left: 6px;
+  padding-right: 6px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: #334F65;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+.helper-panel {
+  display: block;
+  justify-content: center;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #334F65;
+  margin: 20px;
+  padding-bottom: 5px;
+}
+
+.form-container {
+  display: inline-block;
+  background-color: #E5DFD2;
+  width: auto;
+  border-radius: 4px;
+  box-shadow: 3px 3px 3px #988890;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #334F65;
+  padding: 5px;
+}
+
+.form-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: .2s all ease-in-out;
+  width: 200px;
+  color: #916257;
+  font-weight: 500;
+}
+
+/* @media only screen and (max-width: 650px) {
+  .helper-panel {
+  padding-left: 40px;
+  padding-right: 40px;
+  }
+} */
+
+/* @media only screen and (max-width: 768px) {
+  .helper-panel {
+    width:750px;
+  }
+} */
+
+.helper-information {
+  display: inline-block;
+  justify-content: center;
+  background-color: #E5DFD2;
+  width: 300px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px #988890;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+}
+
+button {
+  background-color: #E5DFD2;
+  color: #334F65;
+  border-radius: 8px;
+  border-color: #916257;
+  padding: 8px;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  margin: 5px;
+}
+
+#next-btn {
+  margin-top: 15px;
+}
+
+#button-container {
+  display: inline-block, wrap;
+  justify-content: center;
+}
+
+#helper-photo {
+  width: 300px;
+  border-radius: 10px;
+  border-color: #916257;
+  background-blend-mode: normal, hard-light;
+}
+
+#banner-photo {
+  width: 100%;
+  height:auto;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* @media only screen and (min-width: 650%) {
+  div {
+    display: flex;
+    justify-content: center;
+  }
+} */
+/* 
+#E5DFD2 white
+#84756D brown
+#988890 lavender
+#916257 burnt orange
+#334F65 blue */
+
+
+input[type=text], input[type=password], input[type=date], .locations-list, .services-list, select {
+  width:20%;
+  padding:15px 10px;
+  margin: 10px 0;
+  display:inline-block;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  box-shadow: 0 0 15px 4 px rgba(0,0,0,0.06);
+  width: 150px;
+  }
+
+  textarea {
+    width:150%;
+    justify-content: left;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+    box-shadow: 0 0 15px 4 px rgba(0,0,0,0.06);
+    width: 300px;
+    }
+
+  /* .loginSubmitButton{
+    background-color:#4CAF50;
+    width: 10%;
+    padding: 9px 5px;
+    margin:10px 0px 0px 35px;
+    cursor:pointer;
+    border:none;
+    color:#ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    } */
+
+   
+    button :hover {
+      opacity:0.8;
+    }
+
+    #login-container{
+      background-color: #E5DFD2;
+      position: absolute;
+      top:0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+      width:600;
+      height: 300px;
+      text-align: center;
+      color: #334F65;
+      font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  }
+
+
+  .thankyou-container {
+    display: inline-block;
+    justify-content: center;
+    background-color: #E5DFD2;
+    width: 300px;
+    height: 200px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 3px #988890;
+    font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  }
