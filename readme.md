@@ -1,5 +1,4 @@
 <p align="center">
-“This was developed during our time as students at Code Chrysalis”
 </p>    
 <p align="center">
 <img src="public/asset/logo.png" width="150px">
