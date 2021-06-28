@@ -5,7 +5,7 @@
 <img src="public/asset/logo.png" width="150px">
 </p>    
 
-# Tasukete - an app for helping new comers to Japan.
+## Tasukete - an app for helping new comers to Japan.
 
 **Tasukete** is a fullstack group project application, using the [Stripe](https://stripe.com/en-jp) API and simple checkout system integration.
     This project gave us the opportunity to work with a real client and to undertake the challenge of building an MVP based on an API from
@@ -16,11 +16,12 @@
 </p> 
     
 
-# Initial Advisory
+## Initial Advisory
+
 Tasukete was created as an API project for the Code Chrysalis Advanced Software Engineering Program. After the course finished, our team decided to create personal forks for the repository in case we chose to continue working on it. The work done as a team during the course can be found in the "staging2" Branch. All other branches build up on this work, and contain my own additions. Major thanks go to Cashless!
 
 
-    ## Technologies used
+## Technologies used
 
 * [React](https://reactjs.org/) for the UI
 * [react-router-DOM](https://www.npmjs.com/package/react-router-dom) 
