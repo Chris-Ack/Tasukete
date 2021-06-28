@@ -17,7 +17,7 @@
 
 ## Initial Advisory
 
-Tasukete was created as an API project for the Code Chrysalis Advanced Software Engineering Program. After the course finished, our team decided to create personal forks for the repository in case we chose to continue working on it. The work done as a team during the course can be found in the "staging2" Branch. All other branches build up on this work, and contain my own additions. Major thanks go to Cashless!
+Tasukete was created as an API project for the Code Chrysalis Advanced Software Engineering Program. After the course finished, our team decided to create personal forks for the repository in case we chose to continue working on it. The work done as a team during the course can be found in the "GroupWorkFinished" Branch. All other branches build up on this work, and contain my own additions. Major thanks go to Cashless!
 
 
 ## Technologies used
